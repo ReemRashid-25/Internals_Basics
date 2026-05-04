@@ -1,0 +1,22 @@
+{
+    "experiment_name": "urbanride-fare-amount",
+    "models": [
+        {
+            "name": "LinearRegression",
+            "mae": 41.67761096280727,
+            "rmse": 51.05112437547432,
+            "r2": 0.8656403434195844,
+            "mape": 9.501222857403864
+        },
+        {
+            "name": "Ridge",
+            "mae": 39.79378479584726,
+            "rmse": 49.072026057821134,
+            "r2": 0.8758558554112686,
+            "mape": 8.767942380006644
+        }
+    ],
+    "best_model": "Ridge",
+    "best_metric_name": "rmse",
+    "best_metric_value": 49.072026057821134
+}

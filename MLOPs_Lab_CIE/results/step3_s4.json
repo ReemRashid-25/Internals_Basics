@@ -1,0 +1,8 @@
+{
+ "health_endpoint": "/heartbeat",
+ "predict_endpoint": "/infer",
+ "port": 8888,
+ "health_response": {"alive": true, "service": "UrbanRide fare_amount API"},
+ "test_input": {"trip_km": 18.9, "passenger_count": 2, "is_surge": 0, "traffic_index": 2},
+ "prediction": 0.0
+}
