@@ -1,3 +1,4 @@
+import joblib
 import pandas as pd
 import numpy as np
 import json
@@ -27,13 +28,14 @@ models = {
     "LinearRegression": LinearRegression(),
     "Ridge": Ridge()
 }
-
+os.makedirs("models", exist_ok=True)
 best_rmse = float("inf")
 best_model_name = None
 
 for name, model in models.items():
     with mlflow.start_run(run_name=name):
         model.fit(X_train, y_train)
+        joblib.dump(model, f"models/{name}.pkl")
 
         preds = model.predict(X_test)
 
@@ -64,10 +66,9 @@ for name, model in models.items():
         if rmse < best_rmse:
             best_rmse = rmse
             best_model_name = name
-            os.makedirs("models", exist_ok=True)
-            import joblib
-            joblib.dump(model, f"models/best_model.pkl")
-
+            best_model = model
+            
+joblib.dump(best_model, "models/best_model.pkl")		
 # Save JSON
 output = {
     "experiment_name": "urbanride-fare-amount",
