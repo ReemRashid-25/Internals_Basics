@@ -7,7 +7,7 @@
         "min_samples_split": 2,
         "max_depth": 5
     },
-    "best_mae": 45.327720999999904,
-    "best_cv_mae": 87.9941023690476,
+    "best_rmse": 45.327720999999904,
+    "best_cv_rmse": 87.9941023690476,
     "parent_run_name": "tuning-urbanride"
 }
